@@ -1,0 +1,14 @@
+@use '../../styles/vars' as v;
+
+.splitter {
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 400px;
+  background: v.$color-white;
+  border-radius: 25px;
+  &__bill {
+    margin: 40px 0 0 40px;
+    width: 50%;
+  }
+}
