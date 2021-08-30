@@ -4,8 +4,8 @@ import './style.scss';
 
 const People = () => {
   return (
-    <div>
-      <label className="people">
+    <div className="people">
+      <label className="people__title">
         Number of People
         <br />
         <input className="people__input" type="number" value="" placeholder="0" />

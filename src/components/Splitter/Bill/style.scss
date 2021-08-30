@@ -1,13 +1,16 @@
 @use '../../../styles/vars' as v;
 
 .bill {
+  margin-bottom: 35px;
+  &__title {
   color: v.$color-dark-grayish-cyan;
   font-size: v.$title-font-size;
   font-weight: v.$font-weight-bold;
   position: relative;
+  }
   &__input {
     margin-top: 10px;
-    width: 80%;
+    width: 90%;
     height: 40px;
     background: v.$color-light-grayish-cyan;
     border: none;

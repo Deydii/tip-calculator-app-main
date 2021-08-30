@@ -1,6 +1,7 @@
 import Bill from "./Bill";
 import Tip from "./Tip";
-import People from './People';
+import People from "./People";
+import Amount from "./Amount";
 
 import "./style.scss";
 
@@ -11,6 +12,9 @@ const Splitter = () => {
         <Bill />
         <Tip />
         <People />
+      </div>
+      <div className="splitter__amount">
+        <Amount />
       </div>
     </main>
   );

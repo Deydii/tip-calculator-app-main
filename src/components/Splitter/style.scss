@@ -11,4 +11,10 @@
     margin: 40px 0 0 40px;
     width: 50%;
   }
+  &__amount {
+    width: 50%;
+    background: v.$color-very-dark-cyan;
+    margin: 30px;
+    border-radius: 20px;
+  }
 }
