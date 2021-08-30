@@ -1,0 +1,46 @@
+@use '../../../styles/vars' as v;
+
+.tips {
+  margin-top: 30px;
+  width: 80%;
+  &__title {
+    color: v.$color-dark-grayish-cyan;
+    font-size: v.$title-font-size;
+    font-weight: v.$font-weight-bold;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  &__button {
+    &:hover {
+      background: v.$color-strong-cyan;
+    }
+  }
+}
+
+.tip {
+  font-family: "Space Mono", monospace;
+  width: 100px;
+  height: 40px;
+  background: v.$color-very-dark-cyan;
+  color: v.$color-white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: v.$font-weight-bold;
+  &--custom {
+    background: v.$color-light-grayish-cyan;
+    &::placeholder {
+      color: v.$color-dark-grayish-cyan;
+      text-align: center;
+    }
+    &:hover {
+      cursor: pointer;
+      border: v.$color-strong-cyan 2px solid;
+    }
+  }
+}
