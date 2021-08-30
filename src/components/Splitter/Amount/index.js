@@ -9,7 +9,7 @@ const Amount = () => {
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__tip">$0,00</p>
+          <p className="amount__tip">$0.00</p>
         </div>
       </div>
       <div className="amount__line">
@@ -18,7 +18,7 @@ const Amount = () => {
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__tip">$0,00</p>
+          <p className="amount__tip">$0.00</p>
         </div>
       </div>
       <button className="amount__button">Reset</button>
