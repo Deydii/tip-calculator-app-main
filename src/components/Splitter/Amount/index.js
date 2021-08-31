@@ -21,7 +21,7 @@ const Amount = () => {
           <p className="amount__tip">$0.00</p>
         </div>
       </div>
-      <button className="amount__button">Reset</button>
+      <button className="amount__button" type="button" disabled>Reset</button>
     </div>
   );
 };
