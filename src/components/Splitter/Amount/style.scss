@@ -41,7 +41,19 @@
       background: #a0e8df;
     }
     &:disabled {
-      background: #0C676D;
+      background: #0c676d;
+    }
+  }
+}
+
+@media screen and (max-width: v.$mobile) {
+  .amount {
+    &__tip {
+      font-size: 35px;
+    }
+
+    &__button {
+      margin: 5px 0 10px;
     }
   }
 }

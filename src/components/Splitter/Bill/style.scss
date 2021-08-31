@@ -3,10 +3,10 @@
 .bill {
   margin-bottom: 35px;
   &__title {
-  color: v.$color-dark-grayish-cyan;
-  font-size: v.$title-font-size;
-  font-weight: v.$font-weight-bold;
-  position: relative;
+    color: v.$color-dark-grayish-cyan;
+    font-size: v.$title-font-size;
+    font-weight: v.$font-weight-bold;
+    position: relative;
   }
   &__input {
     margin-top: 10px;
@@ -40,4 +40,12 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   display: none;
+}
+
+@media screen and (max-width: v.$mobile) {
+  .bill {
+    &__input {
+      width: 85%;
+    }
+  }
 }

@@ -45,3 +45,9 @@
     }
   }
 }
+
+@media screen and (max-width: v.$mobile) {
+  .tip {
+    width: 120px;
+  }
+}

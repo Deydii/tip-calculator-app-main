@@ -1,5 +1,13 @@
+@use '../../styles/vars' as v;
+
 .calculator {
   font-family: "Space Mono", monospace;
   background: hsl(185, 41%, 84%);
-  height: 100vh;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: v.$mobile) {
+  .calculator {
+    width: 100%;
+  }
 }

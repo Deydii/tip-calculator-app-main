@@ -18,3 +18,21 @@
     border-radius: 20px;
   }
 }
+
+@media screen and (max-width: v.$mobile) {
+  .splitter {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 25px 25px 0 0;
+    height: auto;
+    &__bill {
+      width: 100%;
+      margin: 0;
+      padding: 40px 0 0 20px;
+    }
+    &__amount {
+      margin: 30px auto 30px;
+      width: 90%;
+    }
+  }
+}

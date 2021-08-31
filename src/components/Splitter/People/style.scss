@@ -35,3 +35,11 @@
     top: 38px;
   }
 }
+
+@media screen and (max-width: v.$mobile) {
+  .people {
+    &__input {
+      width: 85%;
+    }
+  }
+}
