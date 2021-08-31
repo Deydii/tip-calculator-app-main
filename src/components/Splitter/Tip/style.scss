@@ -13,7 +13,6 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 10px;
   }
   &__button {
     &:hover {
@@ -25,6 +24,7 @@
 
 .tip {
   font-family: "Space Mono", monospace;
+  margin-top: 10px;
   width: 100px;
   height: 40px;
   background: v.$color-very-dark-cyan;
