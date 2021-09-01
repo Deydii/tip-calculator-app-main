@@ -10,17 +10,31 @@ import "./style.scss";
 const Splitter = () => {
 
   const [billValue, setBillValue] = useState("");
+  const [tipValue, setTipValue] = useState("");
+  const [customTipValue, setCustomTipValue] = useState("");
 
-  // Change bill's value
   const changeBillValue = bill => {
     setBillValue(bill);
+  }
+
+  // Get value of tip button
+  const onClickTipButton = tip => {
+    setTipValue(tip);
+  };
+
+  const changeCustomTipValue = custom => {
+    setCustomTipValue(custom);
   }
 
   return (
     <main className="splitter">
       <div className="splitter__bill">
         <Bill billValue={billValue} onChangeBillValue={changeBillValue} />
-        <Tip />
+        <Tip 
+          onClickTipButton={onClickTipButton}
+          customTipValue={customTipValue}
+          onChangeCustomTipValue={changeCustomTipValue}
+        />
         <People />
       </div>
       <div className="splitter__amount">

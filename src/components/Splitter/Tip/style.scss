@@ -35,6 +35,8 @@
   font-weight: v.$font-weight-bold;
   &--custom {
     background: v.$color-light-grayish-cyan;
+    color: v.$color-very-dark-cyan;
+    text-align: right;
     &::placeholder {
       color: v.$color-dark-grayish-cyan;
       text-align: center;
