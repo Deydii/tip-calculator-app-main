@@ -12,6 +12,7 @@ const Splitter = () => {
   const [billValue, setBillValue] = useState("");
   const [tipValue, setTipValue] = useState("");
   const [customTipValue, setCustomTipValue] = useState("");
+  const [peopleValue, setPeopleValue] = useState("");
 
   const changeBillValue = bill => {
     setBillValue(bill);
@@ -26,6 +27,10 @@ const Splitter = () => {
     setCustomTipValue(custom);
   }
 
+  const changePeopleValue = people => {
+    setPeopleValue(people);
+  }
+
   return (
     <main className="splitter">
       <div className="splitter__bill">
@@ -35,7 +40,7 @@ const Splitter = () => {
           customTipValue={customTipValue}
           onChangeCustomTipValue={changeCustomTipValue}
         />
-        <People />
+        <People peopleValue={peopleValue} onChangePeopleValue={changePeopleValue} />
       </div>
       <div className="splitter__amount">
         <Amount />
