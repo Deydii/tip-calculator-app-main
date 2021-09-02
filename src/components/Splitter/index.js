@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import Bill from "./Bill";
-import Tip from "./Tip";
-import People from "./People";
-import Amount from "./Amount";
+import Bill from './Bill';
+import Tip from './Tip';
+import People from './People';
+import Amount from './Amount';
 
-import "./style.scss";
+import './style.scss';
 
 const Splitter = () => {
   const [billValue, setBillValue] = useState("");
@@ -42,36 +42,33 @@ const Splitter = () => {
   };
 
   useEffect(() => {
-    if (peopleValue > 0) {
       const bill = parseFloat(billValue);
       const tip = parseFloat(tipValue);
       const people = parseFloat(peopleValue);
       const custom = parseFloat(customTipValue);
-  
+
       // Get tip amount per person when user click on a button
-      if (tipValue) {
+      if (people && bill && tip) {
         // Tip Amount per person
         const tipAmountPerPerson = (bill * tip) / people;
         setTipAmount(tipAmountPerPerson);
-  
+
         // Total per person
         const totalPerPerson = bill / people + tipAmountPerPerson;
         setTotal(totalPerPerson);
       }
       // Get tip amount per person when user choose a custom tip
-      else if (customTipValue){
-        const tipAmountPerPerson = ((bill * custom) / 100) / people;
+      else if (people && bill && custom) {
+        const tipAmountPerPerson = (bill * custom) / 100 / people;
         setTipAmount(tipAmountPerPerson);
-  
+
         const totalPerPerson = bill / people + tipAmountPerPerson;
         setTotal(totalPerPerson);
+      } else {
+        setTipAmount(0);
+        setTotal(0);
       }
-      else {
-       setTipAmount(0);
-       setTotal(0);
-      }
-    }
-  },[billValue, tipValue, customTipValue, peopleValue]);
+  }, [billValue, tipValue, customTipValue, peopleValue]);
 
   return (
     <main className="splitter">
@@ -81,6 +78,7 @@ const Splitter = () => {
           onClickTipButton={onClickTipButton}
           customTipValue={customTipValue}
           onChangeCustomTipValue={changeCustomTipValue}
+          tipValue={tipValue}
         />
         <People
           peopleValue={peopleValue}

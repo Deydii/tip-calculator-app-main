@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import iconDollar from "../../../assets/images/icon-dollar.svg";
+import PropTypes from 'prop-types';
+import iconDollar from '../../../assets/images/icon-dollar.svg';
 
 import "./style.scss";
 

@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-const Button = ({ tip, value, onClickTipButton }) => (
+const Button = ({ tip, value, onClickTipButton, tipValue }) => (
   <button
-    className="tips__button tip"
+    className={tipValue === value ? "tips__button tip tip--selected" : "tips__button tip"}
     type="button"
-    value={value} 
+    value={value}
     onClick={() => onClickTipButton(value)}
   >
     {tip}
@@ -15,6 +15,7 @@ Button.propTypes = {
   tip: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onClickTipButton: PropTypes.func.isRequired,
+  tipValue: PropTypes.string.isRequired,
 };
 
 export default Button;

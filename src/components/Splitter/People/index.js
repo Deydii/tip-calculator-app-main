@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import iconPerson from "../../../assets/images/icon-person.svg";
+import iconPerson from '../../../assets/images/icon-person.svg';
 
 import './style.scss';
 

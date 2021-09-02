@@ -16,11 +16,8 @@
   }
   &__button {
     &:hover {
-      background: #A0E8DF;
+      background: #a0e8df;
       color: v.$color-very-dark-cyan;
-    }
-    &:focus {
-      background: v.$color-strong-cyan;
     }
   }
 }
@@ -35,6 +32,9 @@
   border-radius: 5px;
   font-size: 20px;
   font-weight: v.$font-weight-bold;
+  &--selected{
+    background: v.$color-strong-cyan;
+  }
   &--custom {
     background: v.$color-light-grayish-cyan;
     color: v.$color-very-dark-cyan;

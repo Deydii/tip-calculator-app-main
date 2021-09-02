@@ -3,39 +3,45 @@ import PropTypes from "prop-types";
 
 import "./style.scss";
 
-const Tip = ({ 
+const Tip = ({
   onClickTipButton,
   customTipValue,
   onChangeCustomTipValue,
+  tipValue,
 }) => {
   return (
     <div className="tips">
       <p className="tips__title">Select Tip %</p>
       <div className="tips__buttons">
-        <Button 
+        <Button
           tip="5%"
-          value="0.05" 
+          value="0.05"
           onClickTipButton={onClickTipButton}
+          tipValue={tipValue}
         />
-        <Button 
+        <Button
           tip="10%"
           value="0.10"
           onClickTipButton={onClickTipButton}
+          tipValue={tipValue}
         />
-        <Button 
+        <Button
           tip="15%"
-          value="0.15" 
+          value="0.15"
           onClickTipButton={onClickTipButton}
+          tipValue={tipValue}
         />
-        <Button 
+        <Button
           tip="25%"
-          value="0.25" 
+          value="0.25"
           onClickTipButton={onClickTipButton}
+          tipValue={tipValue}
         />
-        <Button 
+        <Button
           tip="50%"
-          value="0.50" 
+          value="0.50"
           onClickTipButton={onClickTipButton}
+          tipValue={tipValue}
         />
         <input
           className="tip tip--custom"
@@ -45,13 +51,13 @@ const Tip = ({
           onChange={(e) => onChangeCustomTipValue(e.target.value)}
         />
       </div>
-  </div>
+    </div>
   );
 };
 
 Tip.propTypes = {
   customTipValue: PropTypes.string.isRequired,
   onChangeCustomTipValue: PropTypes.func.isRequired,
-}
+};
 
 export default Tip;
