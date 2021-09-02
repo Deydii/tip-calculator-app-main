@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Bill from "./Bill";
 import Tip from "./Tip";
@@ -13,6 +13,8 @@ const Splitter = () => {
   const [customTipValue, setCustomTipValue] = useState("");
   const [peopleValue, setPeopleValue] = useState("");
   const [error, setError] = useState(false);
+  const [tipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const changeBillValue = (bill) => {
     setBillValue(bill);
@@ -21,10 +23,12 @@ const Splitter = () => {
   // Get value of tip button
   const onClickTipButton = (tip) => {
     setTipValue(tip);
+    setCustomTipValue("");
   };
 
   const changeCustomTipValue = (custom) => {
     setCustomTipValue(custom);
+    setTipValue("");
   };
 
   const changePeopleValue = (people) => {
@@ -36,6 +40,38 @@ const Splitter = () => {
       setError(false);
     }
   };
+
+  useEffect(() => {
+    if (peopleValue > 0) {
+      const bill = parseFloat(billValue);
+      const tip = parseFloat(tipValue);
+      const people = parseFloat(peopleValue);
+      const custom = parseFloat(customTipValue);
+  
+      // Get tip amount per person when user click on a button
+      if (tipValue) {
+        // Tip Amount per person
+        const tipAmountPerPerson = (bill * tip) / people;
+        setTipAmount(tipAmountPerPerson);
+  
+        // Total per person
+        const totalPerPerson = bill / people + tipAmountPerPerson;
+        setTotal(totalPerPerson);
+      }
+      // Get tip amount per person when user choose a custom tip
+      else if (customTipValue){
+        const tipAmountPerPerson = ((bill * custom) / 100) / people;
+        setTipAmount(tipAmountPerPerson);
+  
+        const totalPerPerson = bill / people + tipAmountPerPerson;
+        setTotal(totalPerPerson);
+      }
+      else {
+       setTipAmount(0);
+       setTotal(0);
+      }
+    }
+  },[billValue, tipValue, customTipValue, peopleValue]);
 
   return (
     <main className="splitter">
@@ -53,7 +89,7 @@ const Splitter = () => {
         />
       </div>
       <div className="splitter__amount">
-        <Amount />
+        <Amount tipAmount={tipAmount} total={total} />
       </div>
     </main>
   );

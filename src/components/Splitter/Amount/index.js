@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
+
 import "./style.scss";
 
-const Amount = () => {
+const Amount = ({ tipAmount, total }) => {
   return (
     <div className="amount">
       <div className="amount__line">
@@ -9,7 +11,7 @@ const Amount = () => {
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__tip">$0.00</p>
+          <p className="amount__price">${tipAmount.toFixed(2)}</p>
         </div>
       </div>
       <div className="amount__line">
@@ -18,12 +20,17 @@ const Amount = () => {
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__tip">$0.00</p>
+          <p className="amount__price">${total.toFixed(2)}</p>
         </div>
       </div>
       <button className="amount__button" type="button" disabled>Reset</button>
     </div>
   );
 };
+
+Amount.propTypes = {
+  tipAmount: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+}
 
 export default Amount;

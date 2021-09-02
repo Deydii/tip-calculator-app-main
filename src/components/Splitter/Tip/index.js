@@ -14,27 +14,27 @@ const Tip = ({
       <div className="tips__buttons">
         <Button 
           tip="5%"
-          value="5" 
+          value="0.05" 
           onClickTipButton={onClickTipButton}
         />
         <Button 
           tip="10%"
-          value="10"
+          value="0.10"
           onClickTipButton={onClickTipButton}
         />
         <Button 
           tip="15%"
-          value="15" 
+          value="0.15" 
           onClickTipButton={onClickTipButton}
         />
         <Button 
           tip="25%"
-          value="25" 
+          value="0.25" 
           onClickTipButton={onClickTipButton}
         />
         <Button 
           tip="50%"
-          value="50" 
+          value="0.50" 
           onClickTipButton={onClickTipButton}
         />
         <input
@@ -45,7 +45,7 @@ const Tip = ({
           onChange={(e) => onChangeCustomTipValue(e.target.value)}
         />
       </div>
-    </div>
+  </div>
   );
 };
 

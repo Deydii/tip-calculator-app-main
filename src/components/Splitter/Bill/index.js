@@ -18,7 +18,7 @@ const Bill = ({ billValue, onChangeBillValue }) => {
         />
         <img className="bill__icon" src={iconDollar} alt="icon dollar" />
       </label>
-    </div>
+  </div>
   );
 };
 
