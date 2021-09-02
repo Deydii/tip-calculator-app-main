@@ -1,6 +1,7 @@
 @use '../../../styles/vars' as v;
 
 .people {
+  position: relative;
   &__title {
     color: v.$color-dark-grayish-cyan;
     font-size: v.$title-font-size;
@@ -30,11 +31,28 @@
       border: v.$color-strong-cyan 2px solid;
       opacity: 1;
     }
+    &--error {
+      border: red 2px solid;
+      &:hover {
+        border: red 2px solid;
+      }
+    }
   }
   &__icon {
     position: absolute;
     left: 10px;
     top: 38px;
+  }
+  &__error {
+    position: absolute;
+    top: 0;
+    right: 35px;
+    color: red;
+    font-weight: v.$font-weight-bold;
+    font-size: v.$title-font-size;
+    &--hide {
+      display: none;
+    }
   }
 }
 
