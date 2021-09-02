@@ -8,39 +8,41 @@ import Amount from "./Amount";
 import "./style.scss";
 
 const Splitter = () => {
-
   const [billValue, setBillValue] = useState("");
   const [tipValue, setTipValue] = useState("");
   const [customTipValue, setCustomTipValue] = useState("");
   const [peopleValue, setPeopleValue] = useState("");
 
-  const changeBillValue = bill => {
+  const changeBillValue = (bill) => {
     setBillValue(bill);
-  }
+  };
 
   // Get value of tip button
   const onClickTipButton = tip => {
     setTipValue(tip);
   };
 
-  const changeCustomTipValue = custom => {
+  const changeCustomTipValue = (custom) => {
     setCustomTipValue(custom);
-  }
+  };
 
-  const changePeopleValue = people => {
+  const changePeopleValue = (people) => {
     setPeopleValue(people);
-  }
+  };
 
   return (
     <main className="splitter">
       <div className="splitter__bill">
         <Bill billValue={billValue} onChangeBillValue={changeBillValue} />
-        <Tip 
+        <Tip
           onClickTipButton={onClickTipButton}
           customTipValue={customTipValue}
           onChangeCustomTipValue={changeCustomTipValue}
         />
-        <People peopleValue={peopleValue} onChangePeopleValue={changePeopleValue} />
+        <People
+          peopleValue={peopleValue}
+          onChangePeopleValue={changePeopleValue}
+        />
       </div>
       <div className="splitter__amount">
         <Amount />

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 const Button = ({ tip, value, onClickTipButton }) => (
-  <button 
-    className="tips__button tip" 
-    type="button" 
+  <button
+    className="tips__button tip"
+    type="button"
     value={value} 
     onClick={() => onClickTipButton(value)}
   >
@@ -13,6 +13,7 @@ const Button = ({ tip, value, onClickTipButton }) => (
 
 Button.propTypes = {
   tip: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onClickTipButton: PropTypes.func.isRequired,
 };
 

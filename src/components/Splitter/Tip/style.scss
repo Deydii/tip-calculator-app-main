@@ -19,6 +19,9 @@
       background: #A0E8DF;
       color: v.$color-very-dark-cyan;
     }
+    &:focus {
+      background: v.$color-strong-cyan;
+    }
   }
 }
 
