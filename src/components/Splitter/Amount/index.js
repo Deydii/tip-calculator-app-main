@@ -1,8 +1,13 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import "./style.scss";
 
-const Amount = ({ tipAmount, total }) => {
+const Amount = ({ 
+  tipAmount, 
+  total, 
+  isDisabled,
+  onClickResetButton 
+}) => {
   return (
     <div className="amount">
       <div className="amount__line">
@@ -23,7 +28,19 @@ const Amount = ({ tipAmount, total }) => {
           <p className="amount__price">${total.toFixed(2)}</p>
         </div>
       </div>
-      <button className="amount__button" type="button" disabled>Reset</button>
+      {isDisabled ? (
+        <button className="amount__button" type="button" disabled>
+          Reset
+        </button>
+      ) : (
+        <button 
+          className="amount__button" 
+          type="button"
+          onClick={onClickResetButton}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 };
@@ -31,6 +48,7 @@ const Amount = ({ tipAmount, total }) => {
 Amount.propTypes = {
   tipAmount: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-}
+  onClickResetButton: PropTypes.func.isRequired,
+};
 
 export default Amount;

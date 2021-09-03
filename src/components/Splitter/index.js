@@ -5,7 +5,7 @@ import Tip from './Tip';
 import People from './People';
 import Amount from './Amount';
 
-import './style.scss';
+import "./style.scss";
 
 const Splitter = () => {
   const [billValue, setBillValue] = useState("");
@@ -15,6 +15,7 @@ const Splitter = () => {
   const [error, setError] = useState(false);
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const changeBillValue = (bill) => {
     setBillValue(bill);
@@ -41,33 +42,46 @@ const Splitter = () => {
     }
   };
 
+  // Reset Tip Calculator
+  const onClickResetButton = () => {
+    setBillValue("");
+    setTipValue("");
+    setCustomTipValue("");
+    setPeopleValue("");
+  }
+
   useEffect(() => {
-      const bill = parseFloat(billValue);
-      const tip = parseFloat(tipValue);
-      const people = parseFloat(peopleValue);
-      const custom = parseFloat(customTipValue);
+    const bill = parseFloat(billValue);
+    const tip = parseFloat(tipValue);
+    const people = parseFloat(peopleValue);
+    const custom = parseFloat(customTipValue);
 
-      // Get tip amount per person when user click on a button
-      if (people && bill && tip) {
-        // Tip Amount per person
-        const tipAmountPerPerson = (bill * tip) / people;
-        setTipAmount(tipAmountPerPerson);
+    // Get tip amount per person when user click on a button
+    if (bill && tip && people) {
+      setIsDisabled(false);
+      // Tip Amount per person
+      const tipAmountPerPerson = (bill * tip) / people;
+      setTipAmount(tipAmountPerPerson);
 
-        // Total per person
-        const totalPerPerson = bill / people + tipAmountPerPerson;
-        setTotal(totalPerPerson);
-      }
-      // Get tip amount per person when user choose a custom tip
-      else if (people && bill && custom) {
-        const tipAmountPerPerson = (bill * custom) / 100 / people;
-        setTipAmount(tipAmountPerPerson);
+      // Total per person
+      const totalPerPerson = bill / people + tipAmountPerPerson;
+      setTotal(totalPerPerson);
+    }
+    // Get tip amount per person when user choose a custom tip
+    else if (bill && custom && people) {
+      setIsDisabled(false);
+      const tipAmountPerPerson = (bill * custom) / 100 / people;
+      setTipAmount(tipAmountPerPerson);
 
-        const totalPerPerson = bill / people + tipAmountPerPerson;
-        setTotal(totalPerPerson);
-      } else {
-        setTipAmount(0);
-        setTotal(0);
-      }
+      const totalPerPerson = bill / people + tipAmountPerPerson;
+      setTotal(totalPerPerson);
+    } else if (people === 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+      setTipAmount(0);
+      setTotal(0);
+    }
   }, [billValue, tipValue, customTipValue, peopleValue]);
 
   return (
@@ -87,7 +101,12 @@ const Splitter = () => {
         />
       </div>
       <div className="splitter__amount">
-        <Amount tipAmount={tipAmount} total={total} />
+        <Amount 
+          tipAmount={tipAmount} 
+          total={total} 
+          isDisabled={isDisabled}
+          onClickResetButton={onClickResetButton}
+        />
       </div>
     </main>
   );
