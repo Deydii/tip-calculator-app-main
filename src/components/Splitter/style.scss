@@ -18,7 +18,7 @@
   }
 }
 
-@media screen and (max-width: v.$mobile) {
+@media screen and (max-width: v.$mobile-large) {
   .splitter {
     width: 100%;
     flex-direction: column;

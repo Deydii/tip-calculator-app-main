@@ -57,9 +57,6 @@
 
 @media screen and (max-width: v.$mobile) {
   .people {
-    &__input {
-      width: 85%;
-    }
     &__error {
       font-size: 13px;
       top: 2.5px;
