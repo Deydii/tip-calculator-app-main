@@ -46,6 +46,14 @@
   }
 }
 
+@media screen and (max-width: v.$tablet) {
+  .amount {
+    &__price {
+      font-size: 32px;
+    }
+  }
+}
+
 @media screen and (max-width: v.$mobile) {
   .amount {
     &__price {

@@ -32,7 +32,7 @@
   border-radius: 5px;
   font-size: 20px;
   font-weight: v.$font-weight-bold;
-  &--selected{
+  &--selected {
     background: v.$color-strong-cyan;
   }
   &--custom {
@@ -47,6 +47,12 @@
       cursor: pointer;
       border: v.$color-strong-cyan 2px solid;
     }
+  }
+}
+
+@media screen and (max-width: v.$tablet) {
+  .tips {
+    margin-bottom: 20px;
   }
 }
 

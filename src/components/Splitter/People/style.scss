@@ -55,6 +55,26 @@
   }
 }
 
+@media screen and (max-width: v.$tablet) {
+  .people {
+    &__input {
+      width: 100%;
+    }
+    &__error {
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: v.$mobile-large) {
+  .people {
+    &__input {
+      width: 90%;
+    }
+  }
+}
+
 @media screen and (max-width: v.$mobile) {
   .people {
     &__error {

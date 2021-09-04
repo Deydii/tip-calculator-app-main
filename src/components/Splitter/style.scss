@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (max-width: v.$tablet) {
+  .splitter {
+    max-width: 650px;
+  }
+}
+
 @media screen and (max-width: v.$mobile-large) {
   .splitter {
     width: 100%;
