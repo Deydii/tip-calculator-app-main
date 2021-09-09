@@ -56,7 +56,7 @@ const Splitter = () => {
     const people = parseFloat(peopleValue);
     const custom = parseFloat(customTipValue);
 
-    // Get tip amount per person when user click on a button
+    // Get tip amount per person when user click on a tip button
     if (bill && tip && people) {
       setIsDisabled(false);
       // Tip Amount per person
