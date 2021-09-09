@@ -52,3 +52,15 @@ test('onChange function should be called', () => {
   userEvent.type(inputEl, '200')
   expect(changeValue).toHaveBeenCalled();
 });
+
+test('onChange function should not be called if input value is not a number', () => {
+  const changeValue = jest.fn();
+  render(
+    <Bill 
+      billValue="" 
+      onChangeBillValue={changeValue} 
+    />);
+  const inputEl = screen.getByLabelText("Bill");
+  userEvent.type(inputEl, 'bill')
+  expect(changeValue).not.toHaveBeenCalled();
+})
