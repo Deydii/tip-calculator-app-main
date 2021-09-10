@@ -29,7 +29,7 @@ describe('Tip component', () => {
   });
 
   test('onClick function should be called when user click on a tip button', () => {
-    const onClickButton = jest.fn()
+    const onClickButton = jest.fn();
     render(
       <Tip
         onClickTipButton={onClickButton}
