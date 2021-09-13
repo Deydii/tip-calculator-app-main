@@ -28,7 +28,7 @@ describe('Tip component', () => {
     expect(buttons.length).toEqual(5);
   });
 
-  test('onClick function should be called when user click on a tip button', () => {
+  test('onClick function should be called when user clicks on a tip button', () => {
     const onClickButton = jest.fn();
     render(
       <Tip
