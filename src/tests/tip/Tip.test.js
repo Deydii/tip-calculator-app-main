@@ -25,7 +25,7 @@ describe('Tip component', () => {
       />
     );
     const buttons = screen.getAllByRole("button");
-    expect(buttons.length).toEqual(5);
+    expect(buttons).toHaveLength(5);
   });
 
   test('onClick function should be called when user clicks on a tip button', () => {
