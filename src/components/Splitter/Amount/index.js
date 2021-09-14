@@ -16,7 +16,7 @@ const Amount = ({
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__price" data-testid="amount__price">${tipAmount.toFixed(2)}</p>
+          <p className="amount__price" data-testid="amount__tip">${tipAmount.toFixed(2)}</p>
         </div>
       </div>
       <div className="amount__line">
@@ -25,7 +25,7 @@ const Amount = ({
           <p className="amount__subtitle">/ person</p>
         </div>
         <div>
-          <p className="amount__price">${total.toFixed(2)}</p>
+          <p className="amount__price" data-testid="amount__total">${total.toFixed(2)}</p>
         </div>
       </div>
       {isDisabled ? (

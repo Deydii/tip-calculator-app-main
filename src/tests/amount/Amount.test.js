@@ -66,7 +66,7 @@ describe('Amount component', () => {
           onClickResetButton={jest.fn()}
         />
       );
-      const pEl = screen.getByTestId("amount__price");
+      const pEl = screen.getByTestId("amount__tip");
       const pElText = parseFloat(pEl.textContent.slice(1));
       expect(tipAmountValue).not.toEqual(pElText);
     });
