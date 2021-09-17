@@ -14,7 +14,8 @@ const People = ({ peopleValue, onChangePeopleValue, error }) => {
           type="number" 
           value={peopleValue}
           onChange={(e) => onChangePeopleValue(e.target.value)}
-          placeholder="0" />
+          placeholder="0" 
+        />
         <img className="people__icon" src={iconPerson} alt="icon person" />
       </label>
       <p 
