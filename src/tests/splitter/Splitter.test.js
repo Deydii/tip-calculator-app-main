@@ -55,4 +55,18 @@ describe('splitter component', () => {
     expect(tipAmount.textContent).toBe(`$0.00`);
     expect(totalAMount.textContent).toBe(`$0.00`);
   });
+
+  test('tipAmount and total values should be zero if people value is negative', () => {
+    render(
+      <Splitter />
+  );
+  const inputPeopleEl = screen.getByLabelText("Number of People");
+  userEvent.type(inputPeopleEl, "-8");
+  
+  const tipAmount = screen.getByTestId("amount__tip");
+  const totalAMount = screen.getByTestId("amount__total");
+
+  expect(tipAmount.textContent).toBe(`$0.00`);
+  expect(totalAMount.textContent).toBe(`$0.00`);
+  });
 });
