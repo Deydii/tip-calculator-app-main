@@ -62,7 +62,7 @@
     }
     &__error {
       right: 0;
-      top: 0;
+      top: 1px;
     }
   }
 }
@@ -72,6 +72,9 @@
     &__input {
       width: 90%;
     }
+    &__error {
+      right: 40px;
+    }
   }
 }
 
@@ -80,6 +83,7 @@
     &__error {
       font-size: 13px;
       top: 2.5px;
+      right: 35px;
     }
   }
 }
