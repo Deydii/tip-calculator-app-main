@@ -13,6 +13,17 @@
   align-items: center;
 }
 
+/* Hide arrow input on Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Hide arrow input on Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media screen and (max-width: v.$mobile) {
   .calculator {
     width: 100%;

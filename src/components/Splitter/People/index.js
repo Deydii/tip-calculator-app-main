@@ -4,6 +4,8 @@ import iconPerson from '../../../assets/images/icon-person.svg';
 import './style.scss';
 
 const People = ({ peopleValue, onChangePeopleValue, error }) => {
+  const numbers = /^[0-9]+$/;
+
   return (
     <div className="people">
       <label className="people__title">
@@ -14,7 +16,15 @@ const People = ({ peopleValue, onChangePeopleValue, error }) => {
           type="number" 
           value={peopleValue}
           onChange={(e) => onChangePeopleValue(e.target.value)}
-          placeholder="0" 
+          placeholder="0"
+          onKeyDown={(e) =>
+            e.key.match(numbers) ||
+            e.key === "Backspace" ||
+            e.key === "ArrowLeft" ||
+            e.key === "ArrowRight"
+              ? e.key
+              : e.preventDefault()
+          }
         />
         <img className="people__icon" src={iconPerson} alt="icon person" />
       </label>

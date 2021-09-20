@@ -38,11 +38,6 @@
   }
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  display: none;
-}
-
 @media screen and (max-width: v.$tablet) {
   .bill {
     margin-bottom: 20px;
